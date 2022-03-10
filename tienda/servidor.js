@@ -18,3 +18,7 @@ app.use('/', express.static('public'))
 
 app.listen( config.PUERTO )
 console.log( `La aplicación está escuchando en http://localhost:${config.PUERTO}`)
+
+// Add gitignore node_modules
+// In GitHub Desktop
+// Fuente: https://stackoverflow.com/questions/29820791/git-ignore-node-modules-folder-everywhere
