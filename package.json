@@ -4,7 +4,7 @@
   "description": "Sistema de Facturacion",
   "main": "servidor.js",
   "scripts": {
-	"start": "nodemon servidor.js"
+	"start": "node servidor.js"
   },
   "author": "Guillermo Pizarro",
   "license": "GPL-3.0",
