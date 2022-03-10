@@ -6,6 +6,7 @@ async function conectar(uri) {
     await bd.connect(uri, {
         // useNewUrlParser:true,
         // useUnifiedTopology:true,
+        
         // dbName:'tienda'
         dbName:'ups_examen'
     })
