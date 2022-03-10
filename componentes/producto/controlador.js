@@ -13,8 +13,14 @@ function obtenerProductos( filtroProducto ) {
     })
 }
 
-function actualizarProducto( producto ) {
+function actualizarProducto( codigo, nombre, valor, proveedores ) {
     return new Promise((resolve, reject) => {
+        let producto = {
+            codigo: codigo,
+            nombre: nombre,
+            valor: valor,
+            ref_proveedor: proveedores
+        }
         storage.actualizar( producto )
         resolve( producto )
     })

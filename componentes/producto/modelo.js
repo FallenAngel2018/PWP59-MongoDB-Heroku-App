@@ -16,17 +16,11 @@ const proveedorSchema = new Schema({
     domicilio: reqString,
 })
 
-// PRODUCTO ( serie, nombre, stock, valor )
 const productoSchema = new Schema({
-    // codigo: reqString,
-    // nombre: reqString,
-    // valor: reqNumber,
-    // ref_proveedor: [proveedorSchema],
-
-    serie: reqString,
+    codigo: reqString,
     nombre: reqString,
-    stock: reqNumber,
     valor: reqNumber,
+    ref_proveedor: [proveedorSchema],
 })
 
 const model = mongoose.model('Producto', productoSchema)

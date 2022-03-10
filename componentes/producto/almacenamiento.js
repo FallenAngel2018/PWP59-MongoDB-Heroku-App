@@ -2,39 +2,29 @@ const model = require('./modelo')
 
 function agregarProducto( producto ) {
     const objeto = new model( producto )
-
-    console.log(objeto)
-
     objeto.save()
 }
 
 function obtenerProductos( filtroProducto ) {
     let filtro = {}
     if (filtroProducto) {
-        filtro = { serie: filtroProducto }
+        filtro = { codigo: filtroProducto }
     }
     const objeto = model.find( filtro )
-
-    console.log(objeto)
-
     return objeto
 }
 
-async function actualizarProducto( producto ) {
-    const objeto = await model.findOne( { serie: producto.serie } )
+function actualizarProducto( producto ) {
+    const objeto = model.findOne( {codigo: producto.codigo} )
     objeto.nombre = producto.nombre
-    objeto.stock = producto.stock
     objeto.valor = producto.valor
-
-    console.log(objeto)
-    console.log(producto)
-
-    const resultado = await objeto.save()
+    objeto.ref_proveedor = producto.ref_proveedor
+    const resultado = objeto.save()
     return resultado
 }
 
-async function eliminarProducto( serie ) {
-    return await model.deleteOne({serie: serie})
+function eliminarProducto( codigo ) {
+    return model.deleteOne({codigo: codigo})
 }
 
 module.exports = {

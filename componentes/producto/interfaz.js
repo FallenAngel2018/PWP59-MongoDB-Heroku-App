@@ -5,8 +5,7 @@ const controlador = require('./controlador')
 const ruta = express.Router()
 
 ruta.get('/', function(req, res) {
-    const filtroProducto = req.body.serie || null
-    console.log("filtroProducto: " + filtroProducto)
+    const filtroProducto = req.query.producto || null
     controlador.obtenerProductos( filtroProducto )
         .then((data) => {
             respuesta.exito(req, res, data, 200)
@@ -27,10 +26,7 @@ ruta.post('/', function(req, res) {
 })
 
 ruta.patch('/', function(req, res) {
-    // controlador.actualizarProducto(req.body.codigo, req.body.nombre, req.body.valor, req.body.proveedores)
-    // controlador.actualizarProducto(req.body.serie, req.body.nombre
-    //                                 , req.body.stock, req.body.valor)
-    controlador.actualizarProducto(req.body)
+    controlador.actualizarProducto(req.body.codigo, req.body.nombre, req.body.valor, req.body.proveedores)
         .then((data) => {
             respuesta.exito(req, res, data, 200)
         })
@@ -40,7 +36,7 @@ ruta.patch('/', function(req, res) {
 })
 
 ruta.delete('/', function(req, res) {
-    controlador.eliminarProducto(req.body.serie)
+    controlador.eliminarProducto(req.body.abreviatura)
         .then((data) => {
             respuesta.exito(req, res, data, 200)
         })
