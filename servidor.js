@@ -16,8 +16,9 @@ rutas( app )
 
 app.use('/', express.static('public'))
 
-app.listen( config.PUERTO )
-console.log( `La aplicación está escuchando en http://localhost:${config.PUERTO}`)
+app.listen( config.PUERTO, config.HOST )
+// console.log( `La aplicación está escuchando en http://localhost:${config.PUERTO}`)
+console.log( `La aplicación está escuchando en ${config.HOST}:${config.PUERTO}`)
 
 // Add gitignore node_modules
 // In GitHub Desktop
