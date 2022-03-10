@@ -4,9 +4,9 @@ bd.Promise = global.Promise
 
 async function conectar(uri) {
     await bd.connect(uri, {
-        // useNewUrlParser:true,
-        // useUnifiedTopology:true,
-        
+        useNewUrlParser:true,
+        useUnifiedTopology:true,
+
         // dbName:'tienda'
         dbName:'ups_examen'
     })
