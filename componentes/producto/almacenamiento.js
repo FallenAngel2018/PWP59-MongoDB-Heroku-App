@@ -8,7 +8,7 @@ function agregarProducto( producto ) {
 function obtenerProductos( filtroProducto ) {
     let filtro = {}
     if (filtroProducto) {
-        filtro = { codigo: filtroProducto }
+        filtro = { serie: filtroProducto }
     }
     const objeto = model.find( filtro )
     return objeto
