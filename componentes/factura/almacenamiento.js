@@ -35,8 +35,8 @@ async function actualizarFactura( factura ) {
     return resultado
 }
 
-function eliminarFactura( codigo ) {
-    return model.deleteOne({codigo: codigo})
+async function eliminarFactura( codigo ) {
+    return await model.deleteOne({codigo: codigo})
 }
 
 module.exports = {

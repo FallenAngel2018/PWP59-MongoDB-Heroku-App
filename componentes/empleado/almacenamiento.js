@@ -26,8 +26,8 @@ async function actualizarEmpleado( empleado ) {
     return resultado
 }
 
-function eliminarEmpleado( cedula ) {
-    return model.deleteOne({cedula: cedula})
+async function eliminarEmpleado( cedula ) {
+    return await model.deleteOne({cedula: cedula})
 }
 
 module.exports = {
